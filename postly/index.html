@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postly — Génère des posts LinkedIn viraux à partir d'un article</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <!-- HERO -->
+        <section class="hero">
+            <span class="badge">Propulsé par Claude AI</span>
+            <h1 class="hero-title">
+                Transforme un article<br>
+                en post LinkedIn viral.
+            </h1>
+            <p class="hero-subtitle">
+                Colle l'URL d'un article, et Postly te génère un post LinkedIn prêt à publier en quelques secondes.
+            </p>
+
+            <!-- INPUT BOX -->
+            <div class="input-card">
+                <input
+                    type="url"
+                    id="article-url"
+                    placeholder="https://exemple.com/article-de-blog"
+                    autocomplete="off"
+                />
+                <button id="generate-btn" class="btn-primary">
+                    Générer mon post
+                </button>
+            </div>
+            <p id="error-message" class="error-message"></p>
+        </section>
+
+        <!-- LOADING STATE -->
+        <section id="loading-state" class="loading-state">
+            <div class="spinner"></div>
+            <p>Analyse de l'article en cours…</p>
+        </section>
+
+        <!-- RESULT -->
+        <section id="result-container" class="result-container">
+            <div class="result-card">
+                <h2>Résumé de l'article</h2>
+                <p id="summary-content" class="summary-content"></p>
+            </div>
+
+            <div class="result-card">
+                <div class="result-header">
+                    <h2>Post LinkedIn</h2>
+                    <button id="copy-btn" class="btn-copy">
+                        <span id="copy-label">Copier</span>
+                    </button>
+                </div>
+                <div id="post-content" class="post-content"></div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>© 2026 Postly — Made with Claude AI</p>
+        </footer>
+    </main>
+
+    <!-- NEWSLETTER MODAL -->
+    <div id="newsletter-modal" class="modal">
+        <div class="modal-content">
+            <button id="close-modal" class="close-modal" aria-label="Fermer">×</button>
+
+            <div id="newsletter-form">
+                <h3>Reçois 1 post LinkedIn viral par semaine</h3>
+                <p>Inscris-toi à la newsletter et reçois chaque lundi un post LinkedIn analysé et décortiqué.</p>
+                <input
+                    type="email"
+                    id="email-input"
+                    placeholder="ton@email.com"
+                    autocomplete="email"
+                />
+                <button id="subscribe-btn" class="btn-primary">
+                    Je m'inscris
+                </button>
+            </div>
+
+            <div id="newsletter-success" class="newsletter-success">
+                <div class="success-check">✓</div>
+                <h3>Merci pour ton inscription !</h3>
+                <p>Tu recevras ton premier post lundi prochain.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
